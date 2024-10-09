@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>surpresa</title>
+    <style>
+        /* Estilo da página */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364); /* Gradiente de tons de azul */
+            text-align: center;
+        }
+
+        h1 {
+            color: #e0f7fa; /* Um azul muito claro para contraste */
+            font-size: 28px;
+            margin-bottom: 40px;
+            padding: 0 20px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px; /* Espaço entre os botões */
+        }
+
+        button {
+            background-color: #00796b; /* Um azul esverdeado escuro */
+            color: white; /* Texto branco */
+            border: none;
+            border-radius: 10px;
+            padding: 15px 40px;
+            font-size: 20px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            outline: none;
+        }
+
+        button:hover {
+            background-color: #004d40; /* Um azul mais escuro no hover */
+            color: white;
+            transform: scale(1.1);
+        }
+
+        #nao {
+            position: relative;
+        }
+
+        .mensagem-final {
+            display: none;
+            color: #e0f7fa; /* Mantém o texto azul claro */
+            font-size: 24px;
+            margin-top: 30px;
+            animation: fadeIn 1s forwards;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Estilo do vídeo embutido */
+        iframe {
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Tá afim de ver um filme hoje à noite, aqui em casa?</h1>
+        <div class="container">
+            <button id="sim">Sim</button>
+            <button id="nao">Não</button>
+        </div>
+
+        <!-- Mensagem final com o vídeo embutido -->
+        <div class="mensagem-final" id="mensagemFinal">
+            <p>Ótimo rs! O filme é só uma desculpa para algo mais... interessante 😏.</p>
+            <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/0mJMW2CzTiA?autoplay=1" 
+            frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <script>
+        const botaoNao = document.getElementById("nao");
+        const botaoSim = document.getElementById("sim");
+        const mensagemFinal = document.getElementById("mensagemFinal");
+
+        // Evento para desktop
+        botaoNao.addEventListener("mouseover", function() {
+            moverBotao();
+        });
+
+        // Evento para smartphones e tablets
+        botaoNao.addEventListener("touchstart", function() {
+            moverBotao();
+        });
+
+        // Função que move o botão "Não" para uma nova posição aleatória
+        function moverBotao() {
+    const x = Math.random() * (window.innerWidth - botaoNao.offsetWidth);
+    const y = Math.random() * (window.innerHeight - botaoNao.offsetHeight);
+    botaoNao.style.left = `${x}px`; // Crase para interpolação correta
+    botaoNao.style.top = `${y}px`; // Crase para interpolação correta
+    botaoNao.style.position = 'absolute'; // Faz o botão se mover ao redor da tela
+}
+
+        botaoSim.addEventListener("click", function() {
+            // Oculta os botões e mostra a mensagem final com o vídeo embutido
+            document.querySelector('.container').style.display = 'none';
+            mensagemFinal.style.display = 'block';
+        });
+    </script>
+</body>
+</html>
