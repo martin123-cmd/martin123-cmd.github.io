@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensagem Especial</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #bcd4e6; /* Azul claro suave */
+            text-align: center;
+        }
+
+        .container {
+            max-width: 600px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #f0f4f8; /* Fundo suave */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #2a6f97; /* Azul profundo */
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
+
+        p {
+            color: #4d4d4d; /* Cinza escuro */
+            font-size: 18px;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        #musicButton {
+            background-color: #2a6f97; /* Azul profundo */
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 15px 50px;
+            font-size: 18px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto; /* Centraliza o botão */
+            gap: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        #musicButton:hover {
+            background-color: #1b4d6b; /* Azul mais escuro para hover */
+        }
+
+        #musicButton img {
+            width: 24px;
+            height: 24px;
+        }
+
+        #musicButton span {
+            font-size: 18px;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            #musicButton {
+                font-size: 16px;
+                padding: 10px 40px;
+            }
+
+            #musicButton img {
+                width: 20px;
+                height: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Carinho este mensagem é para você (Cariño este mensaje es para ti)</h1>
+        <p>
+            "Minha princesa, que esta quinta-feira seja cheia de luz e boas energias para você. Nunca esqueça que você é incrível em tudo o que faz. Caminhe com confiança, pois você tem tudo para conquistar cada um dos seus sonhos. Te envio um abraço apertado, carregado de carinho e muita energia positiva. Que seu dia seja tão lindo quanto você, minha gatinha!".
+        </p>
+        <p>
+            "Mi princesa, que este jueves esté lleno de luz y buenas energías para ti. Nunca olvides que eres increíble en todo lo que haces. Camina con confianza, porque tienes todo para alcanzar cada uno de tus sueños. Te envío un abrazo fuerte, cargado de cariño y mucha energía positiva. ¡Que tu día sea tan lindo como tú, mi gatita!".
+        </p>
+
+        <button id="musicButton">
+            <img id="playIcon" src="https://cdn-icons-png.flaticon.com/512/727/727245.png" alt="Play">
+            <span>Clique para tocar a música 🎶</span>
+        </button>
+        <audio id="audioPlayer">
+            <source src="Baby_Tu_Me_Encantas.mp3" type="audio/mpeg">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+    </div>
+
+    <script>
+        const musicButton = document.getElementById('musicButton');
+        const audioPlayer = document.getElementById('audioPlayer');
+        const playIcon = document.getElementById('playIcon');
+
+        let isPlaying = false;
+
+        musicButton.addEventListener('click', function() {
+            if (isPlaying) {
+                audioPlayer.pause();
+                playIcon.src = 'https://cdn-icons-png.flaticon.com/512/727/727245.png'; // Play icon
+                musicButton.querySelector('span').textContent = 'Clique para tocar a música 🎶';
+            } else {
+                audioPlayer.play();
+                playIcon.src = 'https://cdn-icons-png.flaticon.com/512/727/727234.png'; // Pause icon
+                musicButton.querySelector('span').textContent = 'Clique para pausar a música 🎶';
+            }
+            isPlaying = !isPlaying;
+        });
+    </script>
+</body>
+</html>
