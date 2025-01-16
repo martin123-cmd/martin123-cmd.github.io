@@ -112,45 +112,44 @@
     <div class="container">
         <h1 >🌺Amor este mensagem é para você  (Amor este mensaje es para ti)🌺</h1>
 
-</p> Hoje celebramos dois meses juntos, dois meses em que você me mostrou que o verdadeiro amor se constrói com apoio, confiança e compreensão. Você conhece meus segredos, meus medos mais profundos, e mesmo assim escolhe ficar, me ouvir e me motivar a seguir em frente. 🌹</p> 
-</p> Você é minha força e meu refúgio, a razão pela qual acredito que tudo é possível. Prometo cuidar desse amor, porque o que temos é único e vale cada esforço. 🌟❤️</p> 
-</p> Obrigado por ser minha companheira, minha inspiração e meu lar. Te amo infinitamente. 💫</p> 
+</p> Ainda tenho muito a aprender sobre o amor, mas quero descobrir isso ao seu lado. Tenho erros para superar, mas quero mudá-los por nós.🌹</p> 
+</p> Ainda não alcancei a minha melhor versão, mas anseio que seja você quem a aproveite. Ainda há muitas coisas para viver, e quero viver todas elas ao seu lado. 🌟❤️</p> 
+
 
 <hr>    
 
-</p> Hoy celebramos dos meses juntos, dos meses donde me has demostrado que el verdadero amor se construye con apoyo, confianza y comprensión. Tú conoces mis secretos, mis miedos más profundos, y aun así eliges quedarte, escucharme y motivarme a seguir adelante. 🌹</p>
-</p> Eres mi fuerza y mi refugio, la razón por la que creo que todo es posible. Prometo cuidar de este amor, porque lo que tenemos es único y vale cada esfuerzo. 🌟❤️</p>
-</p> Gracias por ser mi compañera, mi inspiración y mi hogar. Te amo infinitamente. 💫</p> 
+</p> Todavía me queda mucho por aprender sobre el amor, pero quiero descubrirlo a tu lado. Tengo errores por superar, pero quiero cambiarlos por nosotros.🌹</p> 
+</p> No he alcanzado mi mejor versión, pero anelo que seas tú quien la disfrute. Aún hay muchas cosas por vivir, y todas quiero vivirlas a tu lado.🌟❤️ </p>
 
-        <button id="musicButton">
-            <img id="playIcon" src="https://cdn-icons-png.flaticon.com/512/727/727245.png" alt="Play">
-            <span>Clique para tocar a música 🎶</span>
-        </button>
-        <audio id="audioPlayer">
-            <source src="Échame_La_Culpa_[YouConvert.net].mp3" type="audio/mpeg">
-            Seu navegador não suporta o elemento de áudio.
-        </audio>
-    </div>
+<button id="musicButton">
+    <img id="playIcon" src="https://cdn-icons-png.flaticon.com/512/727/727245.png" alt="Play">
+    <span>Clique para tocar a música 🎶</span>
+</button>
+<audio id="audioPlayer">
+    <source src="bany.mp3" type="audio/mpeg">
+    Seu navegador não suporta o elemento de áudio.
+</audio>
+</div>
 
-    <script>
-        const musicButton = document.getElementById('musicButton');
-        const audioPlayer = document.getElementById('audioPlayer');
-        const playIcon = document.getElementById('playIcon');
+<script>
+const musicButton = document.getElementById('musicButton');
+const audioPlayer = document.getElementById('audioPlayer');
+const playIcon = document.getElementById('playIcon');
 
-        let isPlaying = false;
+let isPlaying = false;
 
-        musicButton.addEventListener('click', function() {
-            if (isPlaying) {
-                audioPlayer.pause();
-                playIcon.src = 'https://cdn-icons-png.flaticon.com/512/727/727245.png'; // Play icon
-                musicButton.querySelector('span').textContent = 'Clique para tocar a música 🎶';
-            } else {
-                audioPlayer.play();
-                playIcon.src = 'https://cdn-icons-png.flaticon.com/512/727/727234.png'; // Pause icon
-                musicButton.querySelector('span').textContent = 'Clique para pausar a música 🎶';
-            }
-            isPlaying = !isPlaying;
-        });
-    </script>
+musicButton.addEventListener('click', function() {
+    if (isPlaying) {
+        audioPlayer.pause();
+        playIcon.src = 'https://cdn-icons-png.flaticon.com/512/727/727245.png'; // Play icon
+        musicButton.querySelector('span').textContent = 'Clique para tocar a música 🎶';
+    } else {
+        audioPlayer.play();
+        playIcon.src = 'https://cdn-icons-png.flaticon.com/512/727/727234.png'; // Pause icon
+        musicButton.querySelector('span').textContent = 'Clique para pausar a música 🎶';
+    }
+    isPlaying = !isPlaying;
+});
+</script>
 </body>
 </html>
